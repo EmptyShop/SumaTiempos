@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Suma Tiempos</string>
+    <string name="edit_hours">00</string>
+    <string name="label_hours">Horas</string>
+    <string name="edit_minutos">00</string>
+    <string name="lbl_minutos">Minutos</string>
+    <string name="edit_segundos">00</string>
+    <string name="label_segundos">Segundos</string>
+    <string name="edit_milisegundos">000</string>
+    <string name="label_milisegundos">Milisegundos</string>
+    <string name="button_total">Total</string>
+    <string name="button_sumar">+</string>
+    <string name="lbl_total">Total</string>
+    <string name="error_sumando">Error en sumando</string>
+</resources>
