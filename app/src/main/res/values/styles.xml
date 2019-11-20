@@ -1,8 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
-        <!-- Customize your theme here. -->
+    <!-- Base application theme for API < 21. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorSecondary">@color/color_secondary</item>
 
@@ -10,17 +9,18 @@
         <item name="colorError">@color/color_error</item>
 
         <!--Remap legacy AppCompat attributes to MaterialComponent attributes-->
-        <item name="colorAccent">?colorSecondary</item>
+        <item name="colorAccent">@color/color_secondary</item>
 
+        <!-- Dark theme -->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <!-- <item name="colorAccent">@color/colorAccent</item> -->
     </style>
 
-    <style name="TextAppearance.AppTheme.Body1" parent="Theme.AppCompat.Light">
+    <dimen name="activityPaddingLeft">20dp</dimen>
+
+    <style name="TextAppearance.AppTheme.Body1" parent="TextAppearance.AppCompat.Body1">
         <item name="fontFamily">sans-serif</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">22sp</item>
     </style>
 
     <style name="Widget.AppTheme.Button" parent="Widget.AppCompat.Button">
@@ -28,10 +28,11 @@
         <item name="enforceTextAppearance">true</item>
         <item name="android:textAppearance">@style/TextAppearance.AppTheme.Button</item>
         <item name="android:textColor">@drawable/btn_text_color_selector</item>
+        <item name="android:minWidth">144dp</item>
         <item name="android:paddingLeft">16dp</item>
         <item name="android:paddingRight">16dp</item>
-        <item name="android:paddingTop">4dp</item>
-        <item name="android:paddingBottom">4dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
         <item name="android:insetLeft">0dp</item>
         <item name="android:insetRight">0dp</item>
         <item name="android:insetTop">6dp</item>
@@ -43,26 +44,28 @@
         <item name="iconTint">@drawable/btn_text_color_selector</item>
         <item name="rippleColor">@drawable/btn_ripple_color</item>
         <item name="backgroundTint">@drawable/btn_bg_color_selector</item>
-        <!-- <item name="shapeAppearance">?attr/shapeAppearanceSmallComponent</item> -->
-        <item name="cornerSize">4dp</item>
-    </style>
-    
-    <style name="TextAppearance.AppTheme.Headline6" parent="TextAppearance.AppCompat.Title">
-        <item name="fontFamily">sans-serif-medium</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">22sp</item>
+        <item name="cornerSize">8dp</item>
     </style>
 
     <style name="TextAppearance.AppTheme.Button" parent="TextAppearance.AppCompat.Button">
         <item name="fontFamily">sans-serif-medium</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAllCaps">true</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+    
+    <style name="TextAppearance.AppTheme.Headline6" parent="TextAppearance.AppCompat.Title">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">28sp</item>
     </style>
 
-    <!-- <attr name="textAppearanceButton" format="reference"/>
-
-    <attr name="shapeAppearanceSmallComponent" format="reference"/> -->
+    <style name="TextAppearance.AppTheme.AppTitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">bold|italic</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">34sp</item>
+    </style>
 
 </resources>

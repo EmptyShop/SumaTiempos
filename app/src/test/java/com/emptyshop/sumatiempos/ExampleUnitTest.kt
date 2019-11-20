@@ -1,4 +1,4 @@
-package com.example.carlos.sumatiempos
+package com.emptyshop.sumatiempos
 
 import org.junit.Test
 

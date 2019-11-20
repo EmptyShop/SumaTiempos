@@ -12,4 +12,6 @@
     <string name="button_sumar">+</string>
     <string name="lbl_total">Total</string>
     <string name="error_sumando">Error en sumando</string>
+    <string name="error_minutos">Minutos &lt; 60</string>
+    <string name="error_segundos">Segundos &lt; 60</string>
 </resources>

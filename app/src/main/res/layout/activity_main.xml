@@ -1,152 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".MainActivity">
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.emptyshop.sumatiempos.MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <include
+        android:id="@+id/laAppBar"
+        layout="@layout/app_bar" />
 
-        <EditText
-            android:id="@+id/editTextHoras"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:ems="10"
-            android:hint="@string/edit_hours"
-            android:inputType="number"
-            android:maxLength="3"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textViewHoras"
-            app:layout_constraintStart_toEndOf="@+id/textViewHoras" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewHoras"
-            style="@style/TextAppearance.MaterialComponents.Body1"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
-            android:layout_marginLeft="80dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="27dp"
-            android:gravity="end"
-            android:text="@string/label_hours"
-            app:layout_constraintBottom_toTopOf="@+id/textViewMinutos"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:paddingLeft="@dimen/activityPaddingLeft"
+            android:paddingStart="@dimen/activityPaddingLeft">
 
-        <EditText
-            android:id="@+id/editTextMinutos"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/edit_minutos"
-            android:inputType="number"
-            android:maxLength="2"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textViewMinutos"
-            app:layout_constraintStart_toStartOf="@+id/editTextHoras" />
+            <EditText
+                android:id="@+id/editTextHoras"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:ems="10"
+                android:hint="@string/edit_hours"
+                android:inputType="number"
+                android:maxLength="3"
+                android:importantForAutofill="no"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textViewHoras"
+                app:layout_constraintStart_toEndOf="@+id/textViewHoras" />
 
-        <TextView
-            android:id="@+id/textViewMinutos"
-            style="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:gravity="end"
-            android:text="@string/lbl_minutos"
-            app:layout_constraintEnd_toEndOf="@+id/textViewHoras"
-            app:layout_constraintTop_toBottomOf="@+id/textViewHoras" />
+            <TextView
+                android:id="@+id/textViewHoras"
+                style="@style/TextAppearance.AppTheme.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="27dp"
+                android:gravity="end"
+                android:text="@string/label_hours"
+                app:layout_constraintBottom_toTopOf="@+id/textViewMinutos"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textViewSegundos"
-            style="@style/TextAppearance.AppTheme.Body1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:gravity="end"
-            android:text="@string/label_segundos"
-            app:layout_constraintEnd_toEndOf="@+id/textViewMinutos"
-            app:layout_constraintTop_toBottomOf="@+id/textViewMinutos" />
+            <EditText
+                android:id="@+id/editTextMinutos"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/edit_minutos"
+                android:inputType="number"
+                android:maxLength="2"
+                android:importantForAutofill="no"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textViewMinutos"
+                app:layout_constraintStart_toStartOf="@+id/editTextHoras" />
 
-        <EditText
-            android:id="@+id/editTextSegundos"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/edit_segundos"
-            android:inputType="number"
-            android:maxLength="2"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textViewSegundos"
-            app:layout_constraintStart_toStartOf="@+id/editTextMinutos" />
+            <TextView
+                android:id="@+id/textViewMinutos"
+                style="@style/TextAppearance.AppTheme.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="end"
+                android:text="@string/lbl_minutos"
+                app:layout_constraintEnd_toEndOf="@+id/textViewHoras"
+                app:layout_constraintTop_toBottomOf="@+id/textViewHoras" />
 
-        <TextView
-            android:id="@+id/textViewMilisegundos"
-            style="@style/TextAppearance.AppTheme.Body1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:gravity="end"
-            android:text="@string/label_milisegundos"
-            app:layout_constraintEnd_toEndOf="@+id/textViewSegundos"
-            app:layout_constraintTop_toBottomOf="@+id/textViewSegundos" />
+            <TextView
+                android:id="@+id/textViewSegundos"
+                style="@style/TextAppearance.AppTheme.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="end"
+                android:text="@string/label_segundos"
+                app:layout_constraintEnd_toEndOf="@+id/textViewMinutos"
+                app:layout_constraintTop_toBottomOf="@+id/textViewMinutos" />
 
-        <EditText
-            android:id="@+id/editTextMilisegundos"
-            android:layout_width="48dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/edit_milisegundos"
-            android:inputType="number"
-            android:maxLength="3"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textViewMilisegundos"
-            app:layout_constraintStart_toStartOf="@+id/editTextSegundos" />
+            <EditText
+                android:id="@+id/editTextSegundos"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/edit_segundos"
+                android:inputType="number"
+                android:maxLength="2"
+                android:importantForAutofill="no"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textViewSegundos"
+                app:layout_constraintStart_toStartOf="@+id/editTextMinutos" />
 
-        <Button
-            android:id="@+id/buttonTotal"
-            style="@style/Widget.AppTheme.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
-            android:onClick="total"
-            android:text="@string/button_total"
-            app:layout_constraintBaseline_toBaselineOf="@+id/buttonSumar"
-            app:layout_constraintStart_toEndOf="@+id/buttonSumar" />
+            <TextView
+                android:id="@+id/textViewMilisegundos"
+                style="@style/TextAppearance.AppTheme.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="end"
+                android:text="@string/label_milisegundos"
+                app:layout_constraintEnd_toEndOf="@+id/textViewSegundos"
+                app:layout_constraintTop_toBottomOf="@+id/textViewSegundos" />
 
-        <Button
-            android:id="@+id/buttonSumar"
-            style="@style/Widget.AppTheme.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:onClick="sumaTiempo"
-            android:text="@string/button_sumar"
-            app:layout_constraintEnd_toEndOf="@+id/textViewMilisegundos"
-            app:layout_constraintTop_toBottomOf="@+id/textViewMilisegundos" />
+            <EditText
+                android:id="@+id/editTextMilisegundos"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/edit_milisegundos"
+                android:inputType="number"
+                android:maxLength="3"
+                android:importantForAutofill="no"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textViewMilisegundos"
+                app:layout_constraintStart_toStartOf="@+id/editTextSegundos" />
 
-        <TextView
-            android:id="@+id/textViewEtiquetaTotal"
-            style="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/lbl_total"
-            app:layout_constraintEnd_toEndOf="@+id/buttonSumar"
-            app:layout_constraintTop_toBottomOf="@+id/buttonSumar" />
+            <Button
+                android:id="@+id/buttonTotal"
+                style="@style/Widget.AppTheme.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:onClick="total"
+                android:text="@string/button_total"
+                app:layout_constraintBaseline_toBaselineOf="@+id/buttonSumar"
+                app:layout_constraintStart_toEndOf="@+id/buttonSumar" />
 
-        <TextView
-            android:id="@+id/textViewTotal"
-            style="@style/TextAppearance.MaterialComponents.Headline6"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
-            android:textStyle="bold"
-            app:layout_constraintBaseline_toBaselineOf="@+id/textViewEtiquetaTotal"
-            app:layout_constraintStart_toEndOf="@+id/textViewEtiquetaTotal" />
+            <Button
+                android:id="@+id/buttonSumar"
+                style="@style/Widget.AppTheme.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:onClick="sumaTiempo"
+                android:text="@string/button_sumar"
+                app:layout_constraintEnd_toEndOf="@+id/textViewMilisegundos"
+                app:layout_constraintTop_toBottomOf="@+id/textViewMilisegundos" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            <TextView
+                android:id="@+id/textViewEtiquetaTotal"
+                style="@style/TextAppearance.AppTheme.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/lbl_total"
+                app:layout_constraintEnd_toEndOf="@+id/buttonSumar"
+                app:layout_constraintTop_toBottomOf="@+id/buttonSumar" />
+
+            <TextView
+                android:id="@+id/textViewTotal"
+                style="@style/TextAppearance.AppTheme.Headline6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textViewEtiquetaTotal"
+                app:layout_constraintStart_toEndOf="@+id/textViewEtiquetaTotal" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

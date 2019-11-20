@@ -1,8 +1,7 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
-        <!-- Customize your theme here. -->
+    <!-- Base application theme for API >= 21. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/color_primary_variant</item>
         <item name="colorSecondary">@color/color_secondary</item>
@@ -21,10 +20,9 @@
         <!--Remap legacy AppCompat attributes to MaterialComponent attributes-->
         <item name="colorPrimaryDark">?colorPrimaryVariant</item>
         <item name="colorAccent">?colorSecondary</item>
-
-        <!-- <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item> -->
     </style>
+
+    <dimen name="activityPaddingLeft">0dp</dimen>
 
     <style name="TextAppearance.AppTheme.Body1" parent="TextAppearance.MaterialComponents.Body1">
 
@@ -36,6 +34,10 @@
 
     <style name="TextAppearance.AppTheme.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
 
+    </style>
+
+    <style name="TextAppearance.AppTheme.AppTitle" parent="TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textStyle">bold|italic</item>
     </style>
 
 </resources>

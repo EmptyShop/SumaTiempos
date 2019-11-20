@@ -1,8 +1,25 @@
-package com.example.carlos.sumatiempos
+package com.emptyshop.sumatiempos
 
 import java.lang.StringBuilder
 
+/* Tiempo : almacena un objeto de tiempo.
+*
+* Miembros:
+*
+* horas : Int
+* minutos : Int
+* segundos : Int
+* milisegundos : Int
+*
+* Métodos:
+*
+* Tiempo() : Tiempo
+* suma() : Tiempo
+* toString() : String
+* */
 class Tiempo (_horas : Int = 0, _minutos : Int = 0, _segundos : Int = 0, _milisegundos : Int = 0){
+    /* Constructor : Acepta 4 parámetros opcionales:
+    _horas : Int, _minutos : Int, _segundos : Int, _milisegundos : Int */
     var horas : Int = _horas
     var minutos : Int = _minutos
     set (value){
@@ -17,7 +34,11 @@ class Tiempo (_horas : Int = 0, _minutos : Int = 0, _segundos : Int = 0, _milise
         field = if (value < 1000) value else 0
     }
 
-    fun suma(sumando : Tiempo) : Tiempo{
+    /* suma() : Suma 2 objetos de tipo Tiempo y devuelve el resultado.
+    Parámetros:
+    sumando : Tiempo
+     */
+    fun suma(sumando : Tiempo) : Tiempo {
         val ms = this.milisegundos + sumando.milisegundos
         this.milisegundos = ms % 1000
         this.segundos += ms.div(1000)
@@ -36,6 +57,7 @@ class Tiempo (_horas : Int = 0, _minutos : Int = 0, _segundos : Int = 0, _milise
         return this
     }
 
+    /* toString() : Despliega el valor del objeto en formato h mm ss .ms */
     override fun toString() : String{
         val s = StringBuilder()
         s.append(this.horas.toString())
