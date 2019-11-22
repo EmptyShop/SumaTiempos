@@ -9,10 +9,11 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.text.isDigitsOnly
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
-    // tiempoTotal almacena la suma de los tiempos agregados por el usuario
-    private var tiempoTotal = Tiempo()
+    private var tiempoTotal = Tiempo()  // tiempoTotal almacena la suma de los tiempos agregados por el usuario
+    private var nuevaSuma = false   // nuevaSuma indica cuándo eliminar el historial de sumandos
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,6 +78,7 @@ class MainActivity : AppCompatActivity() {
             tiempo.milisegundos = editTextMilisegundos.text.toString().toInt()
 
             tiempoTotal.suma(tiempo)
+            actualizaHistorial(tiempo)
 
             // actualizamos el resultado en la vista
             findViewById<TextView>(R.id.textViewTotal).text = tiempoTotal.toString()
@@ -95,8 +97,20 @@ class MainActivity : AppCompatActivity() {
 
             // reinicia el objeto de suma acumulada
             tiempoTotal = Tiempo()
+            nuevaSuma = true
         }
 
+    }
+
+    /* Agrega el sumando actual a la lista del histórico de sumandos.
+    * Este método es llamado por el método sumaTiempo. */
+    fun actualizaHistorial(tiempo : Tiempo){
+        if (nuevaSuma){
+            textViewHistorial.setText("")
+            nuevaSuma = false
+        }
+        textViewHistorial.append("\n\u2022 ")
+        textViewHistorial.append(tiempo.toString())
     }
 }
 
